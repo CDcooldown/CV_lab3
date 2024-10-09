@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/robotics/Courses/CV/lab3/build",
+  "command": "/usr/bin/g++  -isystem /usr/local/include/opencv4 -g -o CMakeFiles/test.dir/src/match.cpp.o -c /home/robotics/Courses/CV/lab3/src/match.cpp",
+  "file": "/home/robotics/Courses/CV/lab3/src/match.cpp"
+},
+{
+  "directory": "/home/robotics/Courses/CV/lab3/build",
+  "command": "/usr/bin/g++  -isystem /usr/local/include/opencv4 -g -o CMakeFiles/routine.dir/src/routine.cpp.o -c /home/robotics/Courses/CV/lab3/src/routine.cpp",
+  "file": "/home/robotics/Courses/CV/lab3/src/routine.cpp"
+}
+]

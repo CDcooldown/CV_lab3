@@ -1,0 +1,4 @@
+/home/robotics/Courses/CV/lab3/build/CMakeFiles/test.dir
+/home/robotics/Courses/CV/lab3/build/CMakeFiles/routine.dir
+/home/robotics/Courses/CV/lab3/build/CMakeFiles/edit_cache.dir
+/home/robotics/Courses/CV/lab3/build/CMakeFiles/rebuild_cache.dir
