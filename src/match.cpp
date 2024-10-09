@@ -37,6 +37,11 @@ int main(int argc, char** argv) {
         }
     }
 
+    cv::Mat result;
+    cv::drawMatches(img1, keyImg1, img2, keyImg2, good_matches, result);
+    cout<<"Matching..."<<endl;
+    cv::imshow("Matches",result);
+
     // 5. 提取匹配点的位置
     std::vector<Point2f> points1, points2;
     for (const auto& match : good_matches) {
@@ -49,7 +54,7 @@ int main(int argc, char** argv) {
 
     // 7. 计算本质矩阵并使用 RANSAC 筛选内点
     Mat mask;
-    Mat E = findEssentialMat(points1, points2, cameraMatrix, RANSAC, 0.999, 2.0, mask);
+    Mat E = findEssentialMat(points1, points2, cameraMatrix, RANSAC, 0.999, 1.0, mask);
 
     // 8. 恢复相对位姿（旋转矩阵和平移向量）
     Mat R, t;
