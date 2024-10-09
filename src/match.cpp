@@ -19,8 +19,8 @@ int main(int argc, char** argv) {
     Mat descImg1,descImg2;
     std::vector<cv::KeyPoint> keyImg1,keyImg2;
 
-    b->detectAndCompute(img1, Mat(), keyImg1, descImg1, false);
-    b->detectAndCompute(img2, Mat(), keyImg2, descImg2, false);
+    b->detectAndCompute(img1, Mat(), keyImg1, descImg1);
+    b->detectAndCompute(img2, Mat(), keyImg2, descImg2);
     //1）选取特征匹配算法
     cv::Ptr<DescriptorMatcher>  descriptorMatcher = DescriptorMatcher::create("BruteForce");
     //2）特征匹配
@@ -41,13 +41,11 @@ int main(int argc, char** argv) {
     for (const cv::KeyPoint& kp : keyImg2) {
         points2.push_back(kp.pt); // kp.pt 是关键点的位置
     }
-    cout<<"E testing..."<<endl;
 
     cv::Mat mask;
     // cv::Mat E = findEssentialMat(points1, points2, cameraMatrix, RANSAC);
     cv::Mat E = findEssentialMat(points1, points2, cameraMatrix, RANSAC, 0.999, 3.0, mask);
 
-    cout<<"E good!"<<endl;
 
     // 存储恢复出的旋转矩阵和平移向量
     cv::Mat R, t;
