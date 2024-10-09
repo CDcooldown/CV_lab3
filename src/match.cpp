@@ -18,8 +18,7 @@ int main(int argc, char** argv) {
     b = cv::ORB::create();
     Mat descImg1,descImg2;
     std::vector<cv::KeyPoint> keyImg1,keyImg2;
-    // b->detect(img1, keyImg1, Mat()); 
-    // b->compute(img1, keyImg1, descImg1);
+
     b->detectAndCompute(img1, Mat(), keyImg1, descImg1, false);
     b->detectAndCompute(img2, Mat(), keyImg2, descImg2, false);
     //1）选取特征匹配算法
@@ -46,7 +45,7 @@ int main(int argc, char** argv) {
 
     cv::Mat mask;
     // cv::Mat E = findEssentialMat(points1, points2, cameraMatrix, RANSAC);
-    cv::Mat E = findEssentialMat(points1, points2, cameraMatrix, RANSAC, 0.9, 3.0, mask);
+    cv::Mat E = findEssentialMat(points1, points2, cameraMatrix, RANSAC, 0.999, 3.0, mask);
 
     cout<<"E good!"<<endl;
 
