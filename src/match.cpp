@@ -131,6 +131,9 @@ int main(int argc, char** argv) {
         points1.push_back(keyImg1[match.queryIdx].pt);
         points2.push_back(keyImg2[match.trainIdx].pt);
     }
+    // 输出初始匹配点数和筛选后匹配点数
+    cout << "Initial Matches: " << matches.size() << endl;
+    cout << "Filtered Matches (Through Principal Point): " << filteredMatches.size() << endl;
 
     // RANSAC 计算本质矩阵
     Mat mask;
