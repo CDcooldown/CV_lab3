@@ -111,6 +111,7 @@ int main(int argc, char** argv) {
     cv::Mat bottom_inliers(result_inliers, Rect(0, img1.rows, img2.cols, img2.rows));
     cv::cvtColor(img2, bottom_inliers, COLOR_GRAY2BGR);
 
+    int i = 1;
     // 3. 绘制内点匹配（使用随机颜色）
     for (const auto& match : matches_inliers) {
         cv::Point2f pt1 = keyImg1[match.queryIdx].pt;
@@ -123,6 +124,8 @@ int main(int argc, char** argv) {
         cv::line(result_inliers, pt1, pt2, randomColor, 1);
         cv::circle(result_inliers, pt1, 4, randomColor, 1);
         cv::circle(result_inliers, pt2, 4, randomColor, 1);
+        cout << i << endl;
+        i++;
     }
 
     // 4. 显示筛选后的匹配结果
